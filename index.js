@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 const listaIA = [
   {
     nombre: "Google AI",
@@ -57,3 +59,16 @@ const listaIA = [
     enlace: "https://indicodata.ai/",
   },
 ];
+
+const jsonData = JSON.stringify(listaIA);
+
+fs.writeFile('listaIA.json', jsonData, (err)=>{
+  if (err) {
+    console.error('error al escribir el archivo: ', err)
+  } else {
+    console.log('Archivo creado con exito')
+  }
+});
+
+//console.log(jsonData);
+
